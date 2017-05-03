@@ -9,18 +9,21 @@ import {
   Alert,
 } from 'react-native';
 
-var API_ENDPOINT = 'http://localhost:3001/secured/ping';
-
 var ProfileView = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
         <View style={styles.messageBox}>
+
           <Image
             style={styles.avatar}
             source={{uri: this.props.profile.picture}}
           />
+
           <Text style={styles.title}>Welcome {this.props.profile.name}</Text>
+          <Text style={styles.title}>Age {this.props.profile.age}</Text>
+          <Text style={styles.title}>Gender {this.props.profile.lastName}</Text>
+
         </View>
         <TouchableHighlight
           style={styles.callApiButton}
@@ -32,14 +35,17 @@ var ProfileView = React.createClass({
     );
   },
   _onCallApi: function() {
-    fetch(API_ENDPOINT, {
-        method: "GET",
-        headers: {
+    fetch('https://api.fitbit.com/1/user/228BJ7/profile.json', {
+        method: "POST",
+        headers: new Headers({
           'Authorization': 'Bearer ' + this.props.token.idToken,
-        }
-      })
+          'Content-Type': 'base64',
+        }),
+      }
+    )
       .then((response) => response.text())
       .then((responseText) => {
+        console.log(responseText),
         Alert.alert(
           'Request Successful',
           'We got the secured data successfully',

@@ -24,7 +24,7 @@ var WelcomeView = React.createClass({
             source={require('./img/fitbit_logo.png')}
           />
           <Text style={styles.title}>Welcome to Fit Coach</Text>
-          <Text style={styles.subtitle}>Let's discover your goals, together.</Text>
+          <Text style={styles.title}>Let's discover your goals, together.</Text>
         </View>
         <TouchableHighlight
           style={styles.signInButton}
@@ -38,11 +38,12 @@ var WelcomeView = React.createClass({
   _onLogin: function() {
     lock.show({
       closable: true,
-    }, (err, profile, token) => {
+    }, (err, profile, token, heartrate) => {
       if (err) {
         console.log(err);
         return;
       }
+      
       this.props.navigator.push({
         name: 'Profile',
         passProps: {
