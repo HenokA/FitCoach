@@ -11,6 +11,7 @@ import {
 
 import WelcomeView from './welcome-view';
 import ProfileView from './profile-view';
+import GoalsView from './goals-view';
 
 class Auth0Sample extends Component {
   render() {
@@ -33,6 +34,9 @@ class Auth0Sample extends Component {
     }
     if (route.name == "Profile") {
       return <ProfileView navigator={navigator} {...route.passProps} />
+    }
+    if (route.name == "Goals") {
+      return <GoalsView navigator={navigator} {...route.passProps} />
     }
   }
 }
@@ -64,13 +68,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    marginTop:4,
-    fontSize:16
+    marginTop:23,
+    fontSize:18,
+    textAlign: 'center'
   },
   leftNavButtonText: {
    	fontSize: 18,
-    marginLeft:13,
-    marginTop:2
+    marginLeft:7,
+    marginTop:7
   },
   rightNavButtonText: {
     fontSize: 18,
@@ -78,8 +83,8 @@ const styles = StyleSheet.create({
     marginTop:2
   },
   nav: {
-    height: 60,
-    backgroundColor: '#efefef'
+    height: 40,
+    backgroundColor: '#77c1c5'
   }
 });
 
