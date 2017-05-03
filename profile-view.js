@@ -106,13 +106,13 @@ var styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#2f3f43',
     padding: 12,
-    flexDirection: 'row',
     alignItems: 'center',
   },
   buttons:{
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'flex-start',
+    marginTop: 200,
 
   },
   header:{
@@ -127,6 +127,7 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'flex-start',
+    marginTop: 100,
   },
   badge: {
     alignSelf: 'center',
@@ -147,7 +148,7 @@ var styles = StyleSheet.create({
   },
   callApiButton: {
     height: 30,
-    alignSelf: 'auto',
+    alignSelf: 'stretch',
     backgroundColor: '#00b0b9',
     borderRadius: 5,
     justifyContent: 'center',
@@ -155,7 +156,7 @@ var styles = StyleSheet.create({
   },
   goalButton: {
     height: 30,
-    alignSelf: 'auto',
+    alignSelf: 'stretch',
     backgroundColor: '#74ae46',
     borderRadius: 5,
     justifyContent: 'center',

@@ -31,12 +31,7 @@ const GoalsView = React.createClass({
               
 
         </View>
-        <TouchableHighlight
-          style={styles.callApiButton}
-          underlayColor='#949494'
-          onPress={this._onCallApi}>
-          <Text>Get Info</Text>
-        </TouchableHighlight>
+        
       </View>
     );
   },
@@ -86,7 +81,6 @@ var styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#2f3f43',
     padding: 12,
-    flexDirection: 'row',
     alignItems: 'center',
   },
   header:{
